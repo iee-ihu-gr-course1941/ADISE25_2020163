@@ -1,6 +1,6 @@
 <?php
 $user='iee2020163';
-$pass='159ste753@St69';
+$pass='';
 $host='localhost';
 $db = 'xeri_game';
 
