@@ -1,0 +1,23 @@
+CREATE DATABASE xeri_game CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE xeri_game;
+ 
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  token VARCHAR(32) NOT NULL UNIQUE
+);
+
+CREATE TABLE games (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  state JSON NOT NULL,
+  current_player TINYINT NOT NULL DEFAULT 1, -- whose turn: 1 or 2
+  status ENUM('waiting','playing','finished') NOT NULL DEFAULT 'waiting',
+  game_over TINYINT NOT NULL DEFAULT 0,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+ 
+
+-- drop table games;
+-- drop table users;

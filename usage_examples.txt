@@ -1,0 +1,41 @@
+-- https://users.it.teithe.gr/~iee2020163/adise25
+
+
+-- Stefanos = 751a807a7e79d052931e0c33e994a4f2
+-- Nikos = cd1dfff948037518cbe8af0cc814a3d9
+
+
+-- Αρχικοποίηση χρήστη / auth
+
+curl -X POST -H "Content-Type: application/json" \
+-d '{"name":"Nikos"}' \
+https://users.it.teithe.gr/~iee2020163/adise25/auth.php
+
+ 
+-- Έναρξη παιχνιδιού (start) με token 
+
+curl -X POST -H "Content-Type: application/json" \
+-d '{"token":"751a807a7e79d052931e0c33e994a4f2"}' \
+https://users.it.teithe.gr/~iee2020163/adise25/start.php
+
+
+-- Είσοδος δεύτερου παίκτη
+
+curl -X POST -H "Content-Type: application/json" \
+-d '{"game_id":1,"token":"cd1dfff948037518cbe8af0cc814a3d9"}' \
+https://users.it.teithe.gr/~iee2020163/adise25/join.php
+
+
+-- Προβολή κατάστασης παιχνιδιού
+
+https://users.it.teithe.gr/~iee2020163/adise25/state.php?game_id=1
+
+ 
+
+-- Παίκτης 1 ή 2 παίζουν
+
+curl -X POST -H "Content-Type: application/json" \
+-d '{"game_id":1,"token":"cd1dfff948037518cbe8af0cc814a3d9","card_id":"S7"}' \
+https://users.it.teithe.gr/~iee2020163/adise25/play.php
+ 
+ 
