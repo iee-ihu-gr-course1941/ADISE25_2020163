@@ -1,4 +1,4 @@
-# Ξερή / Τάβλι Web API Project
+# Ξερή Web API Project
 
 ## Περιγραφή Project
 
